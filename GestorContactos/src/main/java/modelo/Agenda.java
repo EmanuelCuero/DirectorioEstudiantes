@@ -45,6 +45,17 @@ public class Agenda {
         return total == listaContactos.length;
     }
 
+    // Busca por nombre (sin importar mayusculas) y devuelve el telefono
+    // Si no lo encuentra devuelve null
+    public String buscarTelefono(String nombre) {
+        for (int i = 0; i < total; i++) {
+            if (listaContactos[i].getNombre().equalsIgnoreCase(nombre)) {
+                return listaContactos[i].getTelefono();
+            }
+        }
+        return null;
+    }
+
     public Contacto[] getListaContactos() {
         return listaContactos;
     }
